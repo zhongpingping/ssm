@@ -11,100 +11,6 @@
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
             <li class="li-border"><a class="mystyle-color" href="#">管理控制台</a></li>
-            <!----下拉框选项---->
-            <div class="dropdown-menu topbar-nav-list">
-                <div class="topbar-nav-col">
-                    <div class="topbar-nav-item">
-                        <p class="topbar-nav-item-title">弹性计算</p>
-                        <ul>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-road"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-picture"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-gift"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="">
-                        <p class="topbar-nav-item-title">弹性计算</p>
-                        <ul>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-road"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-picture"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-gift"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                <div class="topbar-nav-col">
-                    <div class="topbar-nav-item">
-                        <p class="topbar-nav-item-title">弹性计算</p>
-                        <ul>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-road"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-picture"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-gift"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="">
-                        <p class="topbar-nav-item-title">弹性计算</p>
-                        <ul>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-road"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-picture"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                            <li><a href="#">
-                                <span class="glyphicon glyphicon-gift"></span>
-                                <span class="">云服务器 ECS</span>
-                            </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-            </li>
         </ul>
 
         <ul class="nav navbar-nav pull-right">
@@ -115,9 +21,9 @@
                 </a>
             </li>
 
-            <li class="dropdown li-border"><a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">00000000@qq.com<span class="caret"></span></a>
+            <li class="dropdown li-border"><a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">${loginUser.username}<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">退出</a></li>
+                    <li><a href="doLoginout">退出</a></li>
                 </ul>
             </li>
         </ul>

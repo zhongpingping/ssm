@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface UserService {
     public List<User> queryAll();
+
+    User query4Login(User user);
 }

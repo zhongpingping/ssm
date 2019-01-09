@@ -14,7 +14,7 @@
                 <div class="info-title">
                     <div class="pull-left">
                         <h4><strong>Administrator，</strong></h4>
-                        <p>欢迎登录管理系统！ <a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+                        <p>欢迎登录管理系统！</p>
                     </div>
                     <div class="time-title pull-right">
                         <div class="year-month pull-left">
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="w15 pull-left">
-                                        <img src="static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
+                                        <img src="${APP_PATH}/static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
                                         安妮
                                     </div>
                                     <div class="w55 pull-left">系统需要升级</div>
@@ -111,7 +111,7 @@
 
                                 <div class="panel-body">
                                     <div class="w15 pull-left">
-                                        <img src="static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
+                                        <img src="${APP_PATH}/static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
                                         安妮
                                     </div>
                                     <div class="w55 pull-left">系统需要升级</div>
@@ -121,7 +121,7 @@
 
                                 <div class="panel-body">
                                     <div class="w15 pull-left">
-                                        <img src="static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
+                                        <img src="${APP_PATH}/static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
                                         安妮
                                     </div>
                                     <div class="w55 pull-left">系统需要升级</div>
@@ -131,7 +131,7 @@
 
                                 <div class="panel-body">
                                     <div class="w15 pull-left">
-                                        <img src="static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
+                                        <img src="${APP_PATH}/static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
                                         安妮
                                     </div>
                                     <div class="w55 pull-left">系统需要升级</div>
@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="w15 pull-left">
-                                        <img src="static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
+                                        <img src="${APP_PATH}/static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
                                         安妮
                                     </div>
                                     <div class="w55 pull-left">系统需要升级</div>
@@ -149,7 +149,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="w15 pull-left">
-                                        <img src="static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
+                                        <img src="${APP_PATH}/static/img/noavatar_middle.gif" width="25" height="25" alt="图片" class="img-circle">
                                         安妮
                                     </div>
                                     <div class="w55 pull-left">系统需要升级</div>

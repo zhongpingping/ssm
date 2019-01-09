@@ -22,10 +22,10 @@ public class TestController {
         return userService.queryAll();
     }
 
-    @RequestMapping("/index")
-    public String index() {
-        return "sys/index";
-    }
+//    @RequestMapping("/index")
+//    public String index() {
+//        return "sys/index";
+//    }
 
     @ResponseBody
     @RequestMapping("/json")
@@ -35,9 +35,9 @@ public class TestController {
         return map;
     }
 
-
-    @RequestMapping("/login")
-    public String login() {
-        return "sys/login";
-    }
+//
+//    @RequestMapping("/login")
+//    public String login() {
+//        return "sys/login";
+//    }
 }
