@@ -48,7 +48,7 @@
 
 <!-- 登录页面底部 -->
 <div class="logFoot">
-    <p class="p1" style="color: #079ed3">版权所有: 深圳博览天下票务服务有限公司</p>
+    <p class="p1" style="color: #079ed3">版权所有: xxxx有限公司</p>
     <p class="p2"></p>
 </div>
 <!-- 登录页面底部end -->
