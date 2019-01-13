@@ -10,7 +10,7 @@
         <a class="navbar-brand mystyle-brand"><span class="glyphicon glyphicon-home"></span></a> </div>
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="li-border"><a class="mystyle-color" href="#">管理控制台</a></li>
+            <li class="li-border"><a class="mystyle-color" href="#" style="font-size: 16px">管理控制台</a></li>
         </ul>
 
         <ul class="nav navbar-nav pull-right">
@@ -23,7 +23,7 @@
 
             <li class="dropdown li-border"><a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">${loginUser.username}<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="doLoginout">退出</a></li>
+                    <li><a href="${APP_PATH}/doLoginout">退出</a></li>
                 </ul>
             </li>
         </ul>

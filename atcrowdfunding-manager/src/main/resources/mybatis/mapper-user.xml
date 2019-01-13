@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.atcrowdfunding.dao.UserDao">
+
+    <select id="queryPageData" resultType="com.atguigu.atcrowdfunding.bean.User" >
+        select id, username, actual_name actualName, email, create_time createTime from t_user
+        limit #{start}, #{size}
+    </select>
+
+    <select id="queryPageCount" resultType="int" >
+        select count(*) from t_user;
+    </select>
+
+
+    <insert id="insertUser">
+        insert into t_user (username, password, actual_name, email, create_time)
+          values (#{username}, #{password}, #{actualName}, #{email}, #{createTime})
+    </insert>
+
+    <delete id="deleteUsers" >
+        delete from t_user
+        where id
+        <foreach collection="userids" item="userid" open="(" close=")" separator=",">
+            #{userid}
+        </foreach>
+    </delete>
+
+    <delete id="deleteUser">
+        delete from t_user
+        where id = #{userid}
+    </delete>
+
+</mapper>

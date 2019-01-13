@@ -19,5 +19,12 @@
     <script src="${APP_PATH}/static/script/jquery-1.11.1.min.js" type="text/javascript"></script>
     <script src="${APP_PATH}/static/script/jquery.cookie.js" type="text/javascript"></script>
     <script src="${APP_PATH}/static/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/layer/layer.js"></script>
+    <style>
+        * {
+            font-family: "微软雅黑";
+            font-size: 12px;
+        }
+    </style>
 </head>
 

@@ -6,6 +6,7 @@ public class User {
     private String password;
     private String actualName;
     private String email;
+    private Long createTime;
 
     public int getId() {
         return id;
@@ -45,5 +46,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
     }
 }
