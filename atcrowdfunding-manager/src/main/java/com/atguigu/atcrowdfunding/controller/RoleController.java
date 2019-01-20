@@ -2,8 +2,8 @@ package com.atguigu.atcrowdfunding.controller;
 
 import com.atguigu.atcrowdfunding.bean.AJAXResult;
 import com.atguigu.atcrowdfunding.bean.Page;
-import com.atguigu.atcrowdfunding.bean.User;
-import com.atguigu.atcrowdfunding.service.UserService;
+import com.atguigu.atcrowdfunding.bean.Role;
+import com.atguigu.atcrowdfunding.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,39 +15,15 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/role")
+public class RoleController {
 
     @Autowired
-    private UserService userService;
+    private RoleService roleService;
 
-    @RequestMapping("/index")
-    public String index(Model model) {
-//
-//        List<User> users = userService.queryAll();
-//        model.addAttribute("users", users);
-        return "user/index";
-    }
-
-    @RequestMapping("/add")
-    public String add() {
-        return "user/add";
-    }
-
-    @ResponseBody
-    @RequestMapping("/insert")
-    public Object insert(User user) {
-        AJAXResult result = new AJAXResult();
-        try {
-            long createTime = System.currentTimeMillis()/1000;
-            user.setCreateTime(createTime);
-            userService.insertUser(user);
-            result.setSuccess(true);
-        } catch (Exception e) {
-            result.setSuccess(false);
-        }
-
-        return result;
+    @RequestMapping("index")
+    public String index() {
+        return "role/index";
     }
 
     @ResponseBody
@@ -58,9 +34,9 @@ public class UserController {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("start", (pageno-1)*pagesize);
             map.put("size", pagesize);
-            List<User> users = userService.queryPageData(map);
+            List<Role> roles = roleService.queryPageData(map);
 
-            int totalsize = userService.queryPageCount(map);
+            int totalsize = roleService.queryPageCount(map);
             // 最大页码（总页码）
             int totalno = 0;
             if ( totalsize % pagesize == 0 ) {
@@ -69,17 +45,38 @@ public class UserController {
                 totalno = totalsize / pagesize + 1;
             }
 
-            Page<User> userPage = new Page<User>();
-            userPage.setDatas(users);
-            userPage.setPageno(pageno);
-            userPage.setTotalno(totalno);
-            userPage.setTotalsize(totalsize);
+            Page<Role> rolePage = new Page<Role>();
+            rolePage.setDatas(roles);
+            rolePage.setPageno(pageno);
+            rolePage.setTotalno(totalno);
+            rolePage.setTotalsize(totalsize);
 
-            result.setData(userPage);
+            result.setData(rolePage);
             result.setSuccess(true);
 
         } catch (Exception e) {
             result.setSuccess(true);
+        }
+
+        return result;
+    }
+
+    @RequestMapping("/add")
+    public String add() {
+        return "role/add";
+    }
+
+    @ResponseBody
+    @RequestMapping("/insert")
+    public Object insert(Role role) {
+        AJAXResult result = new AJAXResult();
+        try {
+            long createTime = System.currentTimeMillis()/1000;
+            role.setCreateTime(createTime);
+            roleService.insert(role);
+            result.setSuccess(true);
+        } catch (Exception e) {
+            result.setSuccess(false);
         }
 
         return result;
@@ -87,59 +84,53 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/deletes")
-    public Object deletes(Integer[] userids) {
+    public Object deletes(Integer[] roleids) {
         AJAXResult result = new AJAXResult();
         try {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("userids", userids);
-            userService.deleteUsers(map);
+            map.put("roleids", roleids);
+            roleService.deleteRoles(map);
+            result.setSuccess(true);
+        }catch (Exception e) {
+            result.setSuccess(false);
+        }
+
+        return result;
+    }
+
+    @RequestMapping("/edit")
+    public String edit(Integer roleid, Model model) {
+        Role role = roleService.queryRoleById(roleid);
+        model.addAttribute("role", role);
+        return "role/edit";
+    }
+
+    @ResponseBody
+    @RequestMapping("/update")
+    public Object update(Role role) {
+        AJAXResult result = new AJAXResult();
+        try{
+            long createTime = System.currentTimeMillis()/1000;
+            role.setCreateTime(createTime);
+            roleService.updateRole(role);
             result.setSuccess(true);
         } catch (Exception e) {
             result.setSuccess(false);
         }
-
         return result;
     }
 
     @ResponseBody
     @RequestMapping("/delete")
-    public Object delete(Integer userid) {
+    public Object delete(Integer roleId) {
         AJAXResult result = new AJAXResult();
 
         try {
-            userService.deleteUser(userid);
+            roleService.deleteRoleById(roleId);
             result.setSuccess(true);
-        } catch (Exception e) {
+        } catch ( Exception e) {
             result.setSuccess(false);
         }
-
         return result;
     }
-
-
-    @RequestMapping("/edit")
-    public String edit(Integer userid, Model model) {
-        User user = userService.queryByUserid(userid);
-        model.addAttribute("user", user);
-        return "user/edit";
-    }
-
-    @ResponseBody
-    @RequestMapping("/update")
-    public Object update(User user) {
-        AJAXResult result = new AJAXResult();
-
-        try {
-            long createTime = System.currentTimeMillis()/1000;
-            user.setCreateTime(createTime);
-            userService.updateUser(user);
-            result.setSuccess(true);
-        } catch (Exception e) {
-            result.setSuccess(false);
-        }
-
-        return result;
-    }
-
-
 }

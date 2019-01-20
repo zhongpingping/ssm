@@ -2,10 +2,12 @@ package com.atguigu.atcrowdfunding.dao;
 
 import com.atguigu.atcrowdfunding.bean.User;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public interface UserDao {
 
     @Select("select id, username, actual_name actualName, email, create_time createTime from t_user")
@@ -20,7 +22,11 @@ public interface UserDao {
 
     int queryPageCount(Map<String, Object> map);
 
-    void deleteUsers(Map<String,Object> map);
+    void deleteUsers(Map<String,Object> userids);
 
     void deleteUser(Integer userid);
+
+    User queryByUserid(Integer userid);
+
+    void updateUser(User user);
 }

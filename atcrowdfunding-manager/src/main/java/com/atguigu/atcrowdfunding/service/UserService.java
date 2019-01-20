@@ -20,4 +20,8 @@ public interface UserService {
     void deleteUsers(Map<String,Object> map);
 
     void deleteUser(Integer userid);
+
+    User queryByUserid(Integer userid);
+
+    void updateUser(User user);
 }

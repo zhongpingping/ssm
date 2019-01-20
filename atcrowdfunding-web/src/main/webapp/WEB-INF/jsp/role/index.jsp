@@ -11,7 +11,7 @@
             <div class="col-md-12 " style="padding: 0px;">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><i class="glyphicon glyphicon-th"></i> 用户列表</h3>
+                        <h3 class="panel-title"><i class="glyphicon glyphicon-th"></i> 角色列表</h3>
                     </div>
                     <div class="panel-body">
                         <form class="form-inline" role="form" style="float:left;">
@@ -24,24 +24,23 @@
                             <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button>
                         </form>
                         <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;" onclick="deleteSelect()"><i class=" glyphicon glyphicon-remove"></i> 删除</button>
-                        <button type="button" class="btn btn-primary" style="float:right;" onclick="window.location.href='${APP_PATH}/user/add'"><i class="glyphicon glyphicon-plus"></i> 新增</button>
+                        <button type="button" class="btn btn-primary" style="float:right;" onclick="window.location.href='${APP_PATH}/role/add'"><i class="glyphicon glyphicon-plus"></i> 新增</button>
                         <br>
                         <hr style="clear:both;">
                         <div class="table-responsive">
-                            <form id="userForm">
+                            <form id="roleForm">
                                 <table class="table  table-bordered">
                                     <thead>
                                     <tr >
                                         <th width="30">#</th>
                                         <th width="30"><input type="checkbox"></th>
-                                        <th>账号</th>
-                                        <th>名称</th>
-                                        <th>邮箱地址</th>
+                                        <th>角色名</th>
+                                        <th>状态</th>
                                         <th>创建时间</th>
                                         <th width="200">操作</th>
                                     </tr>
                                     </thead>
-                                    <tbody id="userData">
+                                    <tbody id="roleData">
 
                                     </tbody>
                                     <tfoot>
@@ -67,7 +66,7 @@
 <style>
 
 </style>
-<script type="text/javascript" src="${APP_PATH}/static/js/user.js"></script>
+<script type="text/javascript" src="${APP_PATH}/static/js/role.js"></script>
 <%@ include file="../frame/footer.jsp"%>
 </body>
 </html>

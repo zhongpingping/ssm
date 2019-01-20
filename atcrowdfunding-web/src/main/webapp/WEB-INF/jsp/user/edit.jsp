@@ -11,32 +11,35 @@
                 <ol class="breadcrumb">
                     <li><a href="#">用户管理</a></li>
                     <li><a href="#">用户列表</a></li>
-                    <li class="active">新增</li>
+                    <li class="active">修改</li>
                 </ol>
                 <div class="panel panel-default">
-                    <div class="panel-heading">添加新用户<div style="float:right;cursor:pointer;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-question-sign"></i></div></div>
+                    <div class="panel-heading">修改用户信息<div style="float:right;cursor:pointer;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-question-sign"></i></div></div>
                     <div class="panel-body">
                         <form role="form">
                             <div class="form-group">
+                                <label for="inputUsername">编号</label>
+                                <input type="text" class="form-control" id="inputId" readonly value="${user.id}">
+                            </div>
+                            <div class="form-group">
                                 <label for="inputUsername">登陆账号</label>
-                                <input type="text" class="form-control" id="inputUsername" placeholder="请输入登陆账号">
+                                <input type="text" class="form-control" id="inputUsername" value="${user.username}">
                             </div>
                             <div class="form-group">
                                 <label for="inputActualname">用户名称</label>
-                                <input type="text" class="form-control" id="inputActualname" placeholder="请输入用户名称">
+                                <input type="text" class="form-control" id="inputActualname" value="${user.actualName}">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword">登录密码</label>
-                                <input type="text" class="form-control" id="inputPassword" placeholder="请输入登录密码">
+                                <input type="text" class="form-control" id="inputPassword" value="${user.password}">
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail">邮箱地址</label>
-                                <input type="email" class="form-control" id="inputEmail" placeholder="请输入邮箱地址">
+                                <input type="email" class="form-control" id="inputEmail" value="${user.email}">
                                 <br/>
                                 <p class="help-block label label-warning">请输入合法的邮箱地址, 格式为： xxxx@xxxx.com</p>
                             </div>
-                            <button type="button" class="btn btn-success" id="addUser"><i class="glyphicon glyphicon-plus"></i> 新增</button>
-                            <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-refresh"></i> 重置</button>
+                            <button type="button" class="btn btn-success" id="saveUser"><i class="glyphicon glyphicon-save"></i> 保  存</button>
                         </form>
                     </div>
                 </div>

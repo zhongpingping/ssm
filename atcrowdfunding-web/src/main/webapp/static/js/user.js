@@ -57,6 +57,66 @@ $(function () {
         });
 
     });
+
+
+    $("#saveUser").click(function () {
+        var inputId = $("#inputId").val();
+        var inputUsername = $("#inputUsername").val();
+        var inputActualname = $("#inputActualname").val();
+        var inputPassword = $("#inputPassword").val();
+        var inputEmail = $("#inputEmail").val();
+
+        if (inputUsername == "") {
+            layer.msg("登录账号不能为空, 请输入", {time:1000, icon:5, shift:6}, function () {
+
+            });
+            return false;
+        }
+
+        if(inputActualname == "") {
+            layer.msg("用户名称不能为空, 请输入", {time:1000, icon:5, shift:6}, function () {
+
+            });
+            return false;
+        }
+
+        if(inputPassword == "") {
+            layer.msg("登录密码不能为空, 请输入", {time:1000, icon:5, shift:6}, function () {
+
+            });
+            return false;
+        }
+
+        var loadingIndex = null;
+
+        $.ajax({
+            type:"post",
+            url:"update",
+            data:{
+                id:inputId,
+                username:inputUsername,
+                actualName:inputActualname,
+                password:inputPassword,
+                email:inputEmail
+            },
+            beforeSend:function () {
+                loadingIndex = layer.msg('处理中', {icon: 16});
+            },
+            success : function(result) {
+                layer.close(loadingIndex);
+                if ( result.success ) {
+                    layer.msg("用户信息修改成功", {time:1000, icon:6}, function(){
+                        window.location.href = "index";
+                    });
+                } else {
+                    layer.msg("用户信息修改失败，请重新操作", {time:2000, icon:5, shift:6}, function(){
+
+                    });
+                }
+            }
+        });
+    });
+
 });
 
 function deleteSelect() {
@@ -116,7 +176,7 @@ function pageQuery(pageno) {
                 $.each(users, function(i, user){
                     tableContent += '<tr>';
                     tableContent += '  <td>'+(i+1)+'</td>';
-                    tableContent += '  <td><input type="checkbox" name="userid" value="'+user.id+'"></td>';
+                    tableContent += '  <td><input type="checkbox" name="userids" value="'+user.id+'"></td>';
                     tableContent += '  <td>'+user.username+'</td>';
                     tableContent += '  <td>'+user.actualName+'</td>';
                     tableContent += '  <td>'+user.email+'</td>';
@@ -180,4 +240,8 @@ function deleteUser(userid, username) {
     }, function(cindex){
         layer.close(cindex);
     });
+}
+
+function goUpdatePage(userid) {
+    window.location.href = "edit?userid=" + userid;
 }

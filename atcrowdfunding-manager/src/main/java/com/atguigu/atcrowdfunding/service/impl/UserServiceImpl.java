@@ -42,4 +42,12 @@ public class UserServiceImpl implements UserService {
     public void deleteUser(Integer userid) {
         userDao.deleteUser(userid);
     }
+
+    public User queryByUserid(Integer userid) {
+        return userDao.queryByUserid(userid);
+    }
+
+    public void updateUser(User user) {
+        userDao.updateUser(user);
+    }
 }

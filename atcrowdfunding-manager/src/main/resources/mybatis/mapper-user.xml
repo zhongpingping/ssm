@@ -13,15 +13,26 @@
         select count(*) from t_user;
     </select>
 
+    <select id="queryByUserid" resultType="com.atguigu.atcrowdfunding.bean.User">
+        select id, username, password, actual_name actualName, email, create_time createTime
+        from t_user where id = #{userid}
+    </select>
 
     <insert id="insertUser">
         insert into t_user (username, password, actual_name, email, create_time)
           values (#{username}, #{password}, #{actualName}, #{email}, #{createTime})
     </insert>
 
+    <update id="updateUser" >
+        update t_user set username =#{username}, password=#{password}, actual_name=#{actualName}, email=#{email}, create_time=#{createTime}
+        where id=#{id}
+
+    </update>
+
+
     <delete id="deleteUsers" >
         delete from t_user
-        where id
+        where id in
         <foreach collection="userids" item="userid" open="(" close=")" separator=",">
             #{userid}
         </foreach>
